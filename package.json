@@ -1,0 +1,9 @@
+{
+  "name": "todo-sync",
+  "version": "0.1.0",
+  "dependencies": {
+    "express": "^4.10.0",
+    "pouchdb": "^3.0.6",
+    "express-pouchdb": "^0.7.1"
+  }
+}
