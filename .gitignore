@@ -2,7 +2,7 @@
 bower_components
 node_modules
 db/-session-_users
-db/_replicator
 db/_users
+db/_replicator
 db/pouch__all_dbs__
 db/todo
