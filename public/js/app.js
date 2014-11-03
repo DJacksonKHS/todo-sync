@@ -6,10 +6,9 @@
   var newTodoDom = document.getElementById('new-todo');
   var syncDom = document.getElementById('sync-wrapper');
 
-  // EDITING STARTS HERE (you dont need to edit anything above this line)
 
   var db = new PouchDB('todos');
-  var remoteCouch = 'http://user:pass@mname.iriscouch.com/todos';
+  var remoteCouch = 'http://localhost:3000/db/todos';
 
 
   // We have to create a new todo document and enter it in the database
@@ -77,12 +76,11 @@
   }
 
 
-  // EDITING STARTS HERE (you dont need to edit anything below this line)
-
   // There was some form or error syncing
   function syncError() {
     syncDom.setAttribute('data-sync-state', 'error');
   }
+
 
   // User has double clicked a todo, display an input so they can edit the title
   function todoDblClicked(todo) {
@@ -92,6 +90,7 @@
     inputEditTodo.focus();
   }
 
+
   // If they press enter while editing an entry, blur it to trigger save
   // (or delete)
   function todoKeyPressed(todo, event) {
@@ -100,6 +99,7 @@
       inputEditTodo.blur();
     }
   }
+
 
   // Given an object representing a todo, this will create a list item
   // to display it.
@@ -139,9 +139,9 @@
       li.className += 'complete';
       checkbox.checked = true;
     }
-
     return li;
   }
+
 
   function redrawTodosUI(todos) {
     var ul = document.getElementById('todo-list');
@@ -151,6 +151,7 @@
     });
   }
 
+
   function newTodoKeyPressHandler( event ) {
     if (event.keyCode === ENTER_KEY) {
       addTodo(newTodoDom.value);
@@ -158,12 +159,15 @@
     }
   }
 
+
   function addEventListeners() {
     newTodoDom.addEventListener('keypress', newTodoKeyPressHandler, false);
   }
 
+
   addEventListeners();
   showTodos();
+
 
   if (remoteCouch) {
     sync();

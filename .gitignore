@@ -5,4 +5,4 @@ db/-session-_users
 db/_users
 db/_replicator
 db/pouch__all_dbs__
-db/todo
+db/todos
