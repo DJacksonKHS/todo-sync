@@ -1,8 +1,9 @@
 .idea
 bower_components
 node_modules
-db/-session-_users
-db/_users
-db/_replicator
-db/pouch__all_dbs__
-db/todos
+-session-_users
+_users
+_replicator
+pouch__all_dbs__
+todo/**
+todos/**
